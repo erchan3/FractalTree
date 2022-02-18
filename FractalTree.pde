@@ -1,14 +1,16 @@
-void setup() {
+public void setup() {
     size(700, 600);
+    noLoop();
+}
+
+public void draw(){
     background(200);
     strokeWeight(3);
     line(width / 2, height - 30, width / 2, height - 130);
     treeBranch(width / 2, height - 130, 80, Math.PI / 2);
 }
 
-void draw(){}
-
-void treeBranch(float x, float y, double length, double angle) {
+private void treeBranch(float x, float y, double length, double angle) {
     if (length > 5) {
         double a = angle + Math.PI / (Math.random() * 6 + 6);
         float x1 = x - (float)(length * Math.cos(a));
@@ -26,9 +28,6 @@ void treeBranch(float x, float y, double length, double angle) {
     }
 }
 
-void mousePressed() {
-    background(200);
-    strokeWeight(3);
-    line(width / 2, height - 30, width / 2, height - 130);
-    treeBranch(width / 2, height - 130, 80, Math.PI / 2);
+public void mousePressed() {
+    redraw();
 }
